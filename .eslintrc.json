@@ -1,0 +1,50 @@
+{
+    "env": {
+        "browser": true,
+
+        "es2021": true
+    },
+    "extends": [
+        "airbnb-base",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 13
+    },
+    "plugins": ["@typescript-eslint"],
+    "rules": {
+        "import/no-extraneous-dependencies": [
+            "error",
+            { "devDependencies": true }
+        ],
+        "no-console": "off",
+        "@typescript-eslint/no-var-requires": "off",
+        "no-underscore-dangle": "off",
+        "func-names": "off",
+        "no-var": "error",
+        "no-multiple-empty-lines": "error",
+        "func-style": "error",
+        "no-new-func": "error",
+        "space-before-function-paren": "error",
+        "space-before-blocks": "error",
+        "function-paren-newline": "warn",
+        "no-duplicate-imports": "error",
+        "object-curly-newline": "error",
+        "import/extensions": "error",
+        "no-unused-vars": "error",
+        "brace-style": "warn",
+        "spaced-comment": "error",
+        "indent": "warn",
+        "padded-blocks": "warn",
+        "space-in-parens": "error",
+        "block-spacing": "error",
+        "comma-spacing": "warn",
+        "computed-property-spacing": "error",
+        "key-spacing": "error",
+        "comma-style": "error",
+        "semi": "error"
+    }
+}
