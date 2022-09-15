@@ -1,47 +1,24 @@
 import express, { Express, Request, Response } from "express";
+import i18next from "i18next";
+import middleware from "i18next-http-middleware";
+import Backend from "i18next-fs-backend";
+
+i18next
+    .use(Backend)
+    .use(middleware.LanguageDetector)
+    .init({
+        fallbackLng: "en",
+        backend: {
+            loadPath: "./localization/{{lng}}/en.json",
+        },
+    });
 
 const app: Express = express();
-const port = process.env.PORT;
-
-//unused variable
-const x = 10;
-var x,
-    x = 10;
-
-function doSomething() {
-    var foo = 2;
-}
-
-const object2 = {
-    prope: 12,
-};
-console.log(object2);
-
-const foo = () => {
-    console.log("Function Running");
-};
-foo();
-
-var foo = {
-    bar: "This is a bar.",
-    baz: { qux: "This is a qux" },
-    difficult: "to read",
-};
-
-function bar() {
-    // ...
-}
-bar();
-
-const string = "Hiiiii";
-
-const string2 = '"Hiii" How are you?';
-console.log(string);
-
-function* generator() {}
+app.use(middleware.handle(i18next));
+const port = process.env.PORT || 3000;
 
 app.get("/", (req: Request, res: Response) => {
-    res.send("Express + TypeScript Server");
+    res.send(req.t("serverConnect"));
 });
 
 app.listen(port, () => {

@@ -141,7 +141,7 @@
                 "exceptions": ["-"]
             }
         ],
-        "indent": ["error"],
+        // "indent": ["error"],
         "space-infix-ops": ["error", { "int32Hint": false }],
         "padded-blocks": "warn",
         "eol-last": ["error", "always"],
@@ -149,13 +149,13 @@
         "block-spacing": "error",
         "comma-spacing": "warn",
         "computed-property-spacing": "error",
-        "key-spacing": [
-            "error",
-            {
-                "beforeColon": true,
-                "afterColon": true
-            }
-        ],
+        // "key-spacing": [
+        //     "error",
+        //     {
+        //         "beforeColon": true,
+        //         "afterColon": true
+        //     }
+        // ],
         "comma-style": "error",
         "semi": "error"
     }
